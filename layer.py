@@ -6,11 +6,11 @@ class Layer:
         self.inputs = inputs
         self.neurons = neurons
         if weights is None:
-            self.weights = [[0] * inputs for _ in range(neurons)]
+            self.weights = [[1] * inputs for _ in range(neurons)]
         else:
             self.weights = weights
         if biases is None:
-            self.biases = [0] * neurons
+            self.biases = [1] * neurons
         else:
             self.biases = biases
 

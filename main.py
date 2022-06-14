@@ -2,14 +2,16 @@ from layer import Layer
 from param_reader import ParamReader
 from mnist_reader import MNISTReader
 
-# mnreader = MNISTReader()
-# mnreader.plot_data(1)
-
 param_reader = ParamReader()
 param_reader.load()
 
 print("Printing the YAML file")
-print(param_reader.get_layers())
+param_reader.print_layers()
 param_reader.close_file()
 
-print(param_reader.output([1] * 3))
+mnreader = MNISTReader()
+image, label = mnreader.return_set(0)
+
+param_reader.output(image, True)
+
+mnreader.plot_data(1)

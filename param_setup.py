@@ -1,2 +1,0 @@
-class ParamSetup:
-    pass
