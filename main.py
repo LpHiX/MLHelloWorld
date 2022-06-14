@@ -1,10 +1,15 @@
+from layer import Layer
 from param_reader import ParamReader
-from reader import Reader
+from mnist_reader import MNISTReader
 
-#reader = Reader()
-#reader.plot_data(1)
+# mnreader = MNISTReader()
+# mnreader.plot_data(1)
 
 param_reader = ParamReader()
-param_reader.print_file()
-#param_reader.write_defaults()
+param_reader.load()
+
+print("Printing the YAML file")
+print(param_reader.get_layers())
 param_reader.close_file()
+
+print(param_reader.output([1] * 3))

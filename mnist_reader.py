@@ -2,7 +2,7 @@ import random
 from mnist import MNIST
 
 
-class Reader:
+class MNISTReader:
     mndata = None
 
     def __init__(self):
