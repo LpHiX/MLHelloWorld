@@ -24,4 +24,8 @@ class MNISTReader:
 
         import matplotlib.pyplot as plt
         plt.imshow(plot_list, cmap="viridis", interpolation="nearest")
-        plt.show()
+        try:
+            plt.show()
+        except KeyboardInterrupt:
+            print("Plot has been externally interrupted")
+            pass

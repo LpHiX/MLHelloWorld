@@ -6,11 +6,11 @@ class Layer:
         self.inputs = inputs
         self.neurons = neurons
         if weights is None:
-            self.weights = [[1] * inputs for _ in range(neurons)]
+            self.weights = [[0] * inputs for _ in range(neurons)]
         else:
             self.weights = weights
         if biases is None:
-            self.biases = [1] * neurons
+            self.biases = [0] * neurons
         else:
             self.biases = biases
 
@@ -23,5 +23,9 @@ class Layer:
         }
         return output
 
+    def get_weights(self):
+        return self.weights
+
     def output(self, activation):
-        return (np.matmul(self.weights, activation) + self.biases).tolist()
+        out = (np.matmul(self.weights, activation) + self.biases).tolist()
+        return out
